@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { ISSUER_NAME } from "../consts";
 import { getOobi } from "../utils/utils";
 import { SignifyClient } from "signify-ts";
+import { config } from "../config";
 
 export async function keriOobiApi(
   _: Request,
@@ -10,10 +11,8 @@ export async function keriOobiApi(
 ) {
   const client: SignifyClient = _.app.get("signifyClient");
 
-  const url = `${await getOobi(
-    client,
-    ISSUER_NAME
-  )}?name=CF%20Credential%20Issuance`;
+  const issuerName = encodeURIComponent(config.issuerDisplayName);
+  const url = `${await getOobi(client, ISSUER_NAME)}?name=${issuerName}`;
   res.status(200).send({
     success: true,
     data: url,

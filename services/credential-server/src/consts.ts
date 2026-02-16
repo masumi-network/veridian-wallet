@@ -1,33 +1,47 @@
 export const QVI_NAME = "qvi";
 export const ISSUER_NAME = "issuer";
 export const QVI_SCHEMA_SAID = "EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao";
-export const RARE_EVO_DEMO_SCHEMA_SAID =
-  "EJxnJdxkHbRw2wVFNe4IUOPLt8fEtg9Sr3WyTjlgKoIb";
 export const LE_SCHEMA_SAID = "ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY";
-export const F_EMPLOYEE_DEMO_SCHEMA_SAID =
-  "EL9oOWU_7zQn_rD--Xsgi3giCWnFDaNvFMUGTOZx1ARO";
+export const NMKR_DEVELOPER_SCHEMA_SAID =
+  "ENPRGAeBFxWHIwrc0B1Rab5paCKTZjEbZW6KBvwYVhL8";
+export const TEST_CRED_SCHEMA_SAID =
+  "EHcl0snRd0MGH347b-WhHc_CkW-QMmk3JUPMa0TXP8vC";
+export const MASUMI_DEVELOPER_SCHEMA_SAID =
+  "EDXQQnDmDYO4S3SOBIb17WENA8KaPJy46m9VDpeKzxj_";
+export const MASUMI_AGENT_VERIFICATION_SCHEMA_SAID =
+  "EBV88FehFeDa1tiFUQxuuVi1QXKOXVpwOc1cdFMCzBlI";
 export const ACDC_SCHEMAS_ID = [
-  QVI_SCHEMA_SAID,
+  NMKR_DEVELOPER_SCHEMA_SAID,
+  TEST_CRED_SCHEMA_SAID,
+  MASUMI_DEVELOPER_SCHEMA_SAID,
+  MASUMI_AGENT_VERIFICATION_SCHEMA_SAID,
   LE_SCHEMA_SAID,
-  RARE_EVO_DEMO_SCHEMA_SAID,
-  F_EMPLOYEE_DEMO_SCHEMA_SAID,
+  QVI_SCHEMA_SAID,
 ];
 
 export const ACDC_SCHEMAS = [
   {
-    id: F_EMPLOYEE_DEMO_SCHEMA_SAID,
-    name: "Foundation Employee",
+    id: NMKR_DEVELOPER_SCHEMA_SAID,
+    name: "NMKR Developer",
   },
   {
-    id: QVI_SCHEMA_SAID,
-    name: "Qualified vLEI Issuer Credential",
+    id: TEST_CRED_SCHEMA_SAID,
+    name: "Test Credentials",
   },
   {
-    id: RARE_EVO_DEMO_SCHEMA_SAID,
-    name: "Rare EVO 2024 Attendee",
+    id: MASUMI_DEVELOPER_SCHEMA_SAID,
+    name: "Masumi Developer",
+  },
+  {
+    id: MASUMI_AGENT_VERIFICATION_SCHEMA_SAID,
+    name: "Masumi Agent Verification",
   },
   {
     id: LE_SCHEMA_SAID,
     name: "Legal Entity vLEI Credential",
+  },
+  {
+    id: QVI_SCHEMA_SAID,
+    name: "Qualified vLEI Issuer Credential",
   },
 ];

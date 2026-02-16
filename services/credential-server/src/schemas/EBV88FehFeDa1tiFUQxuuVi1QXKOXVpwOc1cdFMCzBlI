@@ -1,0 +1,99 @@
+{
+  "$id": "EBV88FehFeDa1tiFUQxuuVi1QXKOXVpwOc1cdFMCzBlI",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Masumi Verified Agent",
+  "description": "Verifiable credential attesting that an AI agent on the Masumi platform has been verified. Issued after the agent owner completes KYC and proves control of the agent's KERI identifier.",
+  "type": "object",
+  "credentialType": "MasumiVerifiedAgentCredential",
+  "version": "1.0.0",
+  "properties": {
+    "v": {
+      "description": "Version",
+      "type": "string"
+    },
+    "d": {
+      "description": "Credential SAID",
+      "type": "string"
+    },
+    "u": {
+      "description": "One time use nonce",
+      "type": "string"
+    },
+    "i": {
+      "description": "Issuee AID",
+      "type": "string"
+    },
+    "ri": {
+      "description": "Credential status registry",
+      "type": "string"
+    },
+    "s": {
+      "description": "Schema SAID",
+      "type": "string"
+    },
+    "a": {
+      "oneOf": [
+        {
+          "description": "Attributes block SAID",
+          "type": "string"
+        },
+        {
+          "description": "Attributes block",
+          "type": "object",
+          "properties": {
+            "d": {
+              "description": "Attributes block SAID",
+              "type": "string"
+            },
+            "i": {
+              "description": "Issuee AID",
+              "type": "string"
+            },
+            "dt": {
+              "description": "Issuance date time",
+              "type": "string",
+              "format": "date-time"
+            },
+            "kycVerificationId": {
+              "description": "ID of the KYC verification record for the user who requested verification",
+              "type": "string"
+            },
+            "agentId": {
+              "description": "The identifier of the agent in the masumi registry",
+              "type": "string"
+            },
+            "agentName": {
+              "description": "The name of the agent",
+              "type": "string"
+            },
+            "agentApiUrl": {
+              "description": "Base API URL of the agent",
+              "type": "string"
+            },
+            "signature": {
+              "description": "HMAC-SHA256(challenge, secret) proving agent ownership",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "i",
+            "dt",
+            "kycVerificationId",
+            "agentId",
+            "agentName",
+            "agentApiUrl",
+            "signature"
+          ]
+        }
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "i",
+    "ri",
+    "s",
+    "d"
+  ]
+}
