@@ -3,7 +3,10 @@ name: veridian-prod
 services:
   cred-issuance:
     profiles: [cred-issuance,production,local]
-    image: ${CRED_IMAGE:-cardanofoundation/cf-cred-issuance:main}
+    build:
+      context: ./services/credential-server
+      dockerfile: Dockerfile
+    image: ${CRED_IMAGE:-masumi-cred-issuance:latest}
     restart: unless-stopped
     environment:
       - OOBI_ENDPOINT=${CRED_OOBI_ENDPOINT:-http://cred-issuance:3001}
@@ -29,7 +32,10 @@ services:
 
   cred-issuance-ui:
     profiles: [cred-issuance,production,local]
-    image: ${CRED_UI_IMAGE:-cardanofoundation/cf-cred-issuance-ui:main}
+    build:
+      context: ./services/credential-server-ui
+      dockerfile: Dockerfile
+    image: ${CRED_UI_IMAGE:-masumi-cred-issuance-ui:latest}
     restart: unless-stopped
     environment:
       - VITE_SERVER_URL=${CRED_UI_SERVER_URL:-http://localhost:3002}
