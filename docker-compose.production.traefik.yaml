@@ -8,7 +8,7 @@ services:
 
   traefik:
     profiles: [traefik,production]
-    image: "traefik:v3.6.0"
+    image: "traefik:v2.11"
     container_name: "traefik"
     command:
       - "--log.level=${TRAEFIK_LOG_LEVEL:-DEBUG}"
