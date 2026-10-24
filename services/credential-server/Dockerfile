@@ -1,4 +1,4 @@
-FROM node:21.5.0 AS builder
+FROM node:22.23.4 AS builder
 WORKDIR /app
 RUN apt update -qq && apt install -y build-essential && apt clean
 # Configure npm for better timeout handling

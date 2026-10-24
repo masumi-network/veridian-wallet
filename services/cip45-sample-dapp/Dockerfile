@@ -1,5 +1,5 @@
 ARG TARGETPLATFORM=linux/amd64
-FROM node:18 AS builder
+FROM node:22.23.4 AS builder
 WORKDIR /app
 RUN apt update -qq && apt install -y build-essential && apt clean
 COPY package.json .
