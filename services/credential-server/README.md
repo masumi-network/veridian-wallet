@@ -2,7 +2,7 @@
 Right now, this is only used for testing purposes for the wallet - it is not meant as a full blown issuance server - hence there are no tests in this module.
 
 ### How to run (development)
-1. Install dependencies (nodejs >= v18):
+1. Install dependencies (Node.js 22.23.4):
    `npm install`
 2. Run development server:
     `npm run dev`
