@@ -74,7 +74,7 @@ Check out [our documentation](https://docs.veridian.id/) to learn how to use the
 # Getting Started
 
 ## Requirements
-- Node.js: Version 22.23.4.
+- Node.js: Version 20.
 - npm: Compatible with the Node.js version.
 - Xcode: For iOS emulation (latest version recommended).
 - Android Studio: For Android emulation (latest version recommended).
