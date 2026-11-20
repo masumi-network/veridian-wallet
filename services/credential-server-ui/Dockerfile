@@ -8,7 +8,7 @@ COPY . .
 RUN npm run build
 
 
-FROM nginx:alpine
+FROM nginx:1.30.7-alpine
 
 # Nginx config
 RUN rm -rf /etc/nginx/conf.d
